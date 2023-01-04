@@ -5,12 +5,15 @@
     <h1 class="mb-5">Halaman Blog Posts</h1>
 
     @foreach ($posts as $post) 
-    <article>
-        <h2><a href="/posts/{{ $post->slug }}">{{ $post->title }}</a></h2>
-        <p>By. Sandhika Galih in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+    <article class="mb-5 border-bottom pb-4">
+        <h2><a href="/posts/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a></h2>
+
+        <p>By. Ardilla Risqiana in <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
 
         <!-- <h5>By: {{ $post["author"] }}</h5> -->
         <p>{{ $post->excerpt }}</p>
+
+        <a href="/posts/{{ $post->slug }}" class="text-decoration-none">Read more..</a>
     </article>
     @endforeach
 
